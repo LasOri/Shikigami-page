@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Shikigami — test any app like a human</title>
+<meta name="description" content="Shikigami is a native macOS tool that tests applications the way a person does: it looks at a window, finds targets, acts with an emulated cursor, and verifies the result — no selectors, no DOM, no automation hooks." />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<meta property="og:title" content="Shikigami" />
+<meta property="og:description" content="Human-like UI testing for macOS. Observe, act, verify — no selectors, no DOM." />
+<meta property="og:image" content="assets/logo.png" />
+<meta property="og:type" content="website" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<main class="wrap">
+
+  <header class="hero">
+    <img class="mark" src="assets/logo.png" alt="Shikigami app icon" width="108" height="108" />
+    <h1 class="wordmark">Shikigami</h1>
+    <p class="tagline">Test any app like a human.</p>
+    <p class="lede">
+      A native macOS tool that tests applications the way a person does — it looks at a
+      window, decides where to click, acts with an emulated cursor, and checks that the
+      right thing happened. No selectors, no DOM, no accessibility hooks required.
+    </p>
+    <a class="download" href="assets/Shikigami-macOS.zip" download>
+      <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><path fill="currentColor" d="M12 3a1 1 0 0 1 1 1v9.59l3.3-3.3a1 1 0 0 1 1.4 1.42l-5 5a1 1 0 0 1-1.4 0l-5-5a1 1 0 0 1 1.4-1.42l3.3 3.3V4a1 1 0 0 1 1-1ZM5 19a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1Z"/></svg>
+      Download for macOS
+    </a>
+    <p class="req">macOS 14 or later &middot; Apple Silicon &middot; brings your own model</p>
+  </header>
+
+  <section class="how" aria-label="How it works">
+    <h2 class="section-title">How it works</h2>
+    <ol class="steps">
+      <li>
+        <span class="step-num">1</span>
+        <div>
+          <strong>Pick a window</strong>
+          <p>Choose any application window from the menu bar. Shikigami tests exactly that window — the rest of your Mac is ignored.</p>
+        </div>
+      </li>
+      <li>
+        <span class="step-num">2</span>
+        <div>
+          <strong>Write or record a test</strong>
+          <p>Describe a flow in a tiny plain-language <code>.test.shiki</code> file — or just record your clicks and let Shikigami generate one, adding assertions you type or draw a box around.</p>
+        </div>
+      </li>
+      <li>
+        <span class="step-num">3</span>
+        <div>
+          <strong>Watch it work</strong>
+          <p>It observes the window, locates each target (OCR first, a vision model when needed), moves an emulated cursor, and acts — your physical mouse never moves.</p>
+        </div>
+      </li>
+      <li>
+        <span class="step-num">4</span>
+        <div>
+          <strong>Get a verdict</strong>
+          <p>Every step resolves to <strong>passed</strong>, <strong>failed</strong>, <strong>uncertain</strong>, or <strong>blocked</strong> — with before/after evidence kept on anything that didn't pass.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="features" aria-label="Features">
+    <article class="card">
+      <div class="card-icon">🧩</div>
+      <h3>Application-independent</h3>
+      <p>No selectors, no DOM, no accessibility tree required. If a human can see it and click it, Shikigami can test it — native apps, web views, games, anything on screen.</p>
+    </article>
+    <article class="card">
+      <div class="card-icon">🖐️</div>
+      <h3>Human-like interaction</h3>
+      <p>An emulated cursor types and clicks inside the target window while your real pointer stays put — so you can keep working as a test runs.</p>
+    </article>
+    <article class="card">
+      <div class="card-icon">✅</div>
+      <h3>Evidence-based verdicts</h3>
+      <p>Each step is verified by watching the UI actually react. An action that delivers but changes nothing is reported as uncertain — never a false pass.</p>
+    </article>
+    <article class="card">
+      <div class="card-icon">⏺️</div>
+      <h3>Record into tests</h3>
+      <p>Record a flow and Shikigami writes the test for you, with assertions you add as plain text or by dragging a box on the target to capture exactly what should be true.</p>
+    </article>
+    <article class="card">
+      <div class="card-icon">🧭</div>
+      <h3>Discover tests</h3>
+      <p>Point it at an app and it proposes reviewable tests within a budget you set. You approve before anything runs, and destructive steps always ask first.</p>
+    </article>
+    <article class="card">
+      <div class="card-icon">🧠</div>
+      <h3>Bring your own model</h3>
+      <p>One-click local UI-TARS setup, or any OpenAI-compatible endpoint — with an optional separate reasoning model. Screenshots are uploaded only after you consent.</p>
+    </article>
+  </section>
+
+  <section class="why" aria-label="Why test like a human">
+    <h2>Why test like a human?</h2>
+    <p>
+      Traditional automation binds to selectors, DOM nodes, or accessibility identifiers.
+      The moment those shift, the test breaks — even though the app still works perfectly.
+      Shikigami tests the way a person does: it <em>looks</em> at the screen, decides where to
+      act, acts, and confirms the outcome.
+    </p>
+    <p>
+      That makes one approach work across completely different apps, and it tells the truth.
+      Results are grounded in what actually appeared on screen — OCR and a vision model read
+      the window, deterministic checks run before any model is asked, and evidence is kept
+      when something fails. <em>No green checkmark unless the UI really changed.</em>
+    </p>
+  </section>
+
+  <section class="install" aria-label="Getting started">
+    <h2>Opening it the first time</h2>
+    <p>
+      Shikigami is ad-hoc signed but not notarized. When macOS blocks it,
+      right-click (or Control-click) <strong>Shikigami.app</strong> and choose
+      <strong>Open</strong>, then confirm. You only need to do this once.
+    </p>
+    <p>You can also clear the quarantine attribute from Terminal:</p>
+    <pre><code>xattr -dr com.apple.quarantine Shikigami.app</code></pre>
+    <p class="muted">
+      Shikigami lives in the menu bar and asks for Screen Recording and Accessibility on first use —
+      both standard macOS prompts. It needs a vision model: open <strong>Local Model</strong> to download
+      and serve UI-TARS in one click, or point <strong>Settings</strong> at any OpenAI-compatible endpoint.
+      <strong>Setup Status</strong> checks that everything is wired before you run.
+    </p>
+  </section>
+
+  <footer class="foot">
+    <span>Shikigami</span>
+    <span class="dot">&middot;</span>
+    <span>Human-like UI testing for macOS</span>
+  </footer>
+
+</main>
+</body>
+</html>
